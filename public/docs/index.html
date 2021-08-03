@@ -1,0 +1,483 @@
+<!doctype>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seva-sagisu</title>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style1.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHHM4TEWGB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-MHHM4TEWGB');
+  </script>
+
+
+</head>
+
+<body>
+  <div class="doc__bg"></div>
+  <nav class="header">
+    <h1 class="logo"><a href="/"><img src="img/sagisu_seva.png" class="w-80"></a></h1>
+    <ul class="menu">
+      <div class="menu__item toggle"><span></span></div>
+
+      <li class="menu__item"><a href="/" class="link link--dark clr-white"><i class="fa fa-home"></i> Home</a></li>
+    </ul>
+  </nav>
+  <div class="wrapper">
+    <aside class="doc__nav">
+      <ul>
+        <li class="nav-item section-title">Introduction</li>
+        <li class="js-btn selected">Get Started</li>
+        <li class="js-btn">Bed Status</li>
+        <li class="js-btn">Bed Bookings</li>
+      </ul>
+      <!-- <hr> -->
+
+
+    </aside>
+    <article class="doc__content">
+      <section class="js-section">
+        <h3 class="section__title">Get Started</h3>
+        <p>We provide open source APIs to get hospital bed status in Banglore region. We will extend our APIs to
+          different cities and add further in the coming weeks to provide useful data to the developer community.</p>
+        <p>All requests should be directed to sevaprod.sagisu.com (Auth tokens not required)</p>
+        <p>{{url}} = https://sevaprod.sagisu.com/v1</p>
+      </section>
+      <section class="js-section">
+        <h3 class="section__title">/bedStatus</h3>
+        <h3>GET : {{url}}/bedStatus</h3>
+        <p>Provides bed count for hospitals listed on the website. API sorts in descending order of total beds available
+          in each hospital.</p>
+        <p>Note : Query param can be used to sort on ICU count or ICU ventilator count</p>
+        <hr />
+        <h4>Query Params</h4>
+        <p>sortKey : icu or icuVentilator</p>
+        <p>sortOrder : 1(ascending) or -1(descending)</p>
+        <p>
+          <h5 class="section__title">Sample request : https://sevaprod.sagisu.com/v1/bedStatus</h5>
+        </p>
+        <p>
+          <h5 class="section__title">Sample response : </h5>
+        </p>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                {
+                   "data": [
+                      {
+                          "_id": "6092345687e565515850cb7d",
+                          "name": "ESIMC PGIMSR MODEL HOSPITAL",
+                          "address": " 620/A/1, 12th Main Rd, 2nd Block, Rajajinagar, Bengaluru, Karnataka 560010, India",
+                          "mobile": " 918023325130",
+                          "general": 11,
+                          "hdu": 0,
+                          "icu": 0,
+                          "icuVentilator": 0,
+                          "total": 11
+                      }
+                   ]
+                }
+              </code>
+            </pre>
+        </div>
+
+        <h4 class="section__title">Response fields</h4>
+        <table id="customers">
+          <tr>
+            <th>Key</th>
+            <th>Description</th>
+
+          </tr>
+          <tr>
+            <td>_id</td>
+            <td>Unique ID of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>Name of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>address</td>
+            <td>Address of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>mobile</td>
+            <td>Mobile number of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>general</td>
+            <td>Number of beds available in general ward</td>
+          </tr>
+          <tr>
+            <td>hdu</td>
+            <td>Number of beds available in HDU ward</td>
+
+          </tr>
+          <tr>
+            <td>icu</td>
+            <td>Number of beds available in ICU</td>
+
+          </tr>
+          <tr>
+            <td>icuVentilator</td>
+            <td>Number of beds available in ICU ventilator</td>
+
+          </tr>
+          <tr>
+            <td>total</td>
+            <td>Total number of beds available in the hospital across all the wards</td>
+
+          </tr>
+        </table>
+
+        <h3>POST : {{url}}/bedStatus</h3>
+        <p>API to add new hospital details to the system or to update existing hospital details.Accepts array of
+          hospital details to be added or corrected in the system.</p>
+
+        <hr />
+
+        <p>
+          <h5 class="section__title">Sample request : https://sevaprod.sagisu.com/v1/bedStatus</h5>
+        </p>
+        <p>Body params : array of json objects </p>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                 [
+                 {
+                  "name": "General Hospital Jayanagar",
+                  "address": "32nd Cross, 4th B Block, beside Rajiv Gandhi Health Institute, Tilak Nagar, Jayanagar, Bengaluru, Karnataka 560041, India",
+                  "mobile": "918022445711",
+                  "general": 6,
+                  "hdu": 0,
+                  "icu": 0,
+                  "icuVentilator": 0,
+                  "total": 6
+      
+              },
+              {
+                  "name": "General Hospital Anekal",
+                  "address": "Weaver Colony, Anekal, Karnataka 562106, India",
+                  "general": 18,
+                  "hdu": 0,
+                  "icu": 0,
+                  "icuVentilator": 0,
+                  "total": 18
+      
+              }
+                 ]
+              
+              </code>
+            </pre>
+        </div>
+
+        <h4 class="section__title">Request fields</h4>
+        <table id="customers">
+          <tr>
+            <th>Key</th>
+            <th>Validation</th>
+            <th>Description</th>
+
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>required,string</td>
+            <td>Name of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>address</td>
+            <td>string</td>
+            <td>Address of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>mobile</td>
+            <td>string</td>
+            <td>Mobile number of the hospital</td>
+
+          </tr>
+          <tr>
+            <td>general</td>
+            <td>Number</td>
+            <td>Number of beds available in general ward</td>
+          </tr>
+          <tr>
+            <td>hdu</td>
+            <td>Number</td>
+            <td>Number of beds available in HDU ward</td>
+
+          </tr>
+          <tr>
+            <td>icu</td>
+            <td>Number</td>
+            <td>Number of beds available in ICU</td>
+
+          </tr>
+          <tr>
+            <td>icuVentilator</td>
+            <td>Number</td>
+            <td>Number of beds available in ICU ventilator</td>
+
+          </tr>
+          <tr>
+            <td>total</td>
+            <td>Number</td>
+            <td>Total number of beds available in the hospital across all the wards</td>
+
+          </tr>
+        </table>
+
+
+      </section>
+
+
+      <section class="js-section">
+        <h3 class="section__title">/reserve</h3>
+        <h3>GET : {{url}}/reserve</h3>
+        <p>Gives the list of bookings made by the user</p>
+        <hr />
+        <h4>Query Params</h4>
+        <p>userId : id of the user recieved during login</p>
+        <p>
+          <h5 class="section__title">Sample request : https://sevaprod.sagisu.com/v1/reserve?userId=60b90516499210371968513f</h5>
+        </p>
+        <p>
+          <h5 class="section__title">Sample response : </h5>
+        </p>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                {
+                  "data":[
+                     {
+                        "id":"60f8fdabb2c8d909bca63dae",
+                        "reserve":{
+                           "id":"60f8fdabb2c8d909bca63db0",
+                           "type":"ICU"
+                        },
+                        "status":"PENDING",
+                        "patientName":"Test User",
+                        "age":"20",
+                        "location":"User location",
+                        "onOxygenCylinder":false,
+                        "hospitalsVisited":[A,B,C],
+                        "testedForCovid":true,
+                        "covidResult":"Negative",
+                        "hospitalPreference":"Private",
+                        "attenderMobile":"XXXXXXXXXX",
+                        "relationship":"wife",
+                        "hospital":"60ee74d2973f0b38081b72f7",
+                        "user":"60b90516499210371968513f"
+                     }
+                   ]
+                }
+              </code>
+            </pre>
+        </div>
+
+        <h4 class="section__title">Response fields</h4>
+        <table id="customers">
+          <tr>
+            <th>Key</th>
+            <th>Description</th>
+
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Unique ID of the reservation request</td>
+
+          </tr>
+          <tr>
+            <td>reserve.type</td>
+            <td>Type of the hospital bed booked</td>
+
+          </tr>
+          <tr>
+            <td>status</td>
+            <td>Status of reservation request(PENDING,ACCEPTED,REJECTED).</td>
+
+          </tr>
+          <tr>
+            <td>hospital</td>
+            <td>ID of the hospital booked</td>
+
+          </tr>
+          <tr>
+            <td>user</td>
+            <td>ID of the user</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Other patient related informations</td>
+
+          </tr>
+        </table>
+
+        <h3>POST : {{url}}/reserve</h3>
+        <p>API to make hospital bed bookings. </p>
+
+        <hr />
+
+        <p>
+          <h5 class="section__title">Sample request : https://sevaprod.sagisu.com/v1/reserve</h5>
+        </p>
+        <p>Body params : json of booking information </p>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                 
+                {
+                  "reserve":{
+                     "type":"ICU"
+                  },
+                  "patientName":"Test User",
+                  "age":"20",
+                  "location":"User location",
+                  "onOxygenCylinder":false,
+                  "hospitalsVisited":[A,B,C],
+                  "testedForCovid":true,
+                  "covidResult":"Negative",
+                  "hospitalPreference":"Private",
+                  "attenderMobile":"XXXXXXXXXX",
+                  "relationship":"wife",
+                  "srfid":"900",
+                  "buNumber" : "900",
+                  "user":"60b90516499210371968513f"
+               }
+              </code>
+            </pre>
+        </div>
+
+        <h4 class="section__title">Request fields</h4>
+        <table id="customers">
+          <tr>
+            <th>Key</th>
+            <th>Validation</th>
+            <th>Description</th>
+
+          </tr>
+          <tr>
+            <td>reserve.type</td>
+            <td>required,string</td>
+            <td>Type of the bed requested</td>
+
+          </tr>
+          <tr>
+            <td>patientName</td>
+            <td>required,string</td>
+            <td>Name of the patient</td>
+
+          </tr>
+          <tr>
+            <td>age</td>
+            <td>required,string</td>
+            <td>Age of the patient</td>
+
+          </tr>
+          <tr>
+            <td>location</td>
+            <td>required,string</td>
+            <td>Address of the patient</td>
+          </tr>
+          <tr>
+            <td>onOxygenCylinder</td>
+            <td>required,boolean</td>
+            <td>Is pateint on oxygen cylinder or not</td>
+
+          </tr>
+          <tr>
+            <td>hospitalsVisited</td>
+            <td>string array</td>
+            <td>List of all the hospitals visited before booking here</td>
+
+          </tr>
+          <tr>
+            <td>testedForCovid</td>
+            <td>required,boolean</td>
+            <td>Is covid test is done or not?</td>
+
+          </tr>
+          <tr>
+            <td>covidResult</td>
+            <td>required,string</td>
+            <td>Covid report details. POSITIVE,NEGATIVE,AWAITING are the values to this field</td>
+
+          </tr>
+          <tr>
+            <td>hospitalPreference</td>
+            <td>required,string</td>
+            <td>Preferences for the hospital. GOVERNMENT,PRIVATE or ANY should be the values to this field</td>
+
+          </tr>
+          <tr>
+            <td>attenderMobile</td>
+            <td>required,string</td>
+            <td>Mobile number of the attender to which the booking details will be sent.</td>
+
+          </tr>
+          <tr>
+            <td>relationship</td>
+            <td>required,string</td>
+            <td>Relaionship of the attender with the patient</td>
+
+          </tr>
+          <tr>
+            <td>srfid</td>
+            <td>string</td>
+            <td>SRFID given during covid test</td>
+
+          </tr>
+          <tr>
+            <td>buNumber</td>
+            <td>string</td>
+            <td>BU Number given during covid test</td>
+
+          </tr>
+          <tr>
+            <td>user</td>
+            <td>string</td>
+            <td>ID of the user, you will get it during login</td>
+
+          </tr>
+        </table>
+
+
+      </section>
+
+
+
+    </article>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

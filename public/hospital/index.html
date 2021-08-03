@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>Seva Sagisu</title>
+
+	<!-- This site is optimized with the Yoast SEO plugin v6.3.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="" />
+	<link rel="canonical" href="#" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+	<link rel='stylesheet' id='materialwp-material-icons-css'
+		href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CMaterial+Icons&#038;ver=0.0.5'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='materialwp-style-css'
+		href='https://materialwp.com/wp-content/themes/materialwp/style.min.css?ver=0.0.5' type='text/css'
+		media='all' />
+	<link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+	<!-- <script type='text/javascript' src='https://materialwp.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script> -->
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Roboto&display=swap"
+		rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MHHM4TEWGB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-MHHM4TEWGB');
+	</script>
+
+</head>
+
+<body>
+	<div id="page" class="site">
+
+		<header id="masthead" class="site-header" role="banner">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark menu-bg fixed-top">
+				<div class="container" style="max-width: 920px;">
+					<div class="navbar-brand mb-0 logo_wid"><a href="index.html" rel="home"><img
+								src="../img/sagisu_seva.png"></a></div>
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+						data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul id="menu-empty-menu" class="navbar-nav ml-auto">
+							<li class="menu-item  nav-item"><a href="index.html" class="nav-link">Reservation Request</a>
+							</li>
+							<li class="menu-item  nav-item"><a href="../index.html" onclick="logout(); return true;" class="nav-link">Logout</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</nav>
+		</header><!-- #masthead -->
+
+		<div id="content" class="site-content">
+
+
+			<div class="columns">
+				<div class="container" style="max-width: 920px;">
+
+					<div class="container">
+						<div class="row">
+							<h4 class="my-3">Reservation Requests</h4>
+
+
+						</div>
+					</div>
+
+					<div id="reservation_request_card">
+					</div>
+					<!--<div id="loading">
+						Loading Please Wait......
+					</div>-->
+
+		<div class="modal fade" id="modal-reset-password" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+			aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">Reset Password</h4>
+						<button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							 <form id="resetPasswordSubmit">
+								<div class="row">
+									<div class="form-group col-md-12 ">
+
+										<input type="password" class="form-control" required placeholder="Enter New Password"
+											name="newPassword" id="newPassword">
+									</div>
+									<div class="form-group col-md-12 ">
+
+										<input type="password" class="form-control" required placeholder="Confirm Password" name="confPassowrd"
+											id="confPassowrd">
+									</div>
+
+									<div class="col-md-12"><button type="submit"
+											class="rserve_btn mt-4 w-50 mx-auto">Reset Password</button></div>
+
+								</div>
+							</form> 
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+				</div><!-- #content -->
+
+				<footer id="colophon" class="site-footer" role="contentinfo">
+					<div class="container">
+						<div class="site-info text-center">
+							2021 © Seva by Sagisu</div><!-- .site-info -->
+					</div>
+					<div class="site-info text-center py-3">
+						<a href="#">Disclaimer</div><!-- .site-info -->
+		</div>
+			<!--  .container -->
+		</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+
+
+		<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+		<script type='text/javascript'
+			src='https://materialwp.com/wp-content/themes/materialwp/js/dist/scripts.min.js?ver=%20'></script>
+		<script type='text/javascript' src='https://materialwp.com/wp-includes/js/comment-reply.min.js?ver=4.9.17'>
+		</script>
+		<script type='text/javascript' src='https://materialwp.com/wp-includes/js/wp-embed.min.js?ver=4.9.17'>
+		</script>
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js'>
+		</script>
+		<script type='text/javascript' src='https://materialwp.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+		</script>
+
+		<script src="js/reservation_request.js"></script>
+</body>
+
+</html>

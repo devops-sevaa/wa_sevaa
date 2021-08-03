@@ -1,0 +1,305 @@
+           <div class="columns">
+				<div class="container" style="max-width: 920px;">
+
+
+
+					<div class="card_view my-3 py-3">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-9 col-lg-9">
+									<div class=" pl-2">
+										<h3 id="hospName" class="bhead">Hospital name</h3>
+										<div class="chips1 d-inline-block float-right"><span id="bedCount">Total : 5</span></div>
+
+									</div>
+									<div class="d-block p-2">
+										<p class="jss34">
+											<span id="address">Nil </span><span>
+										</p>
+									</div>
+									<div class="d-block p-2 box-bg-color category">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="category-details">
+													<div class="category-label clr1">General</div>
+													<div id="generalCount" class="category-amount">0</div>
+												</div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="category-details">
+													<div class="category-label clr2">HDU</div>
+													<div id="hduCount" class="category-amount">5</div>
+												</div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="category-details">
+													<div class="category-label clr3">ICU</div>
+													<div id="icuCount" class="category-amount">0</div>
+												</div>
+											</div>
+
+
+											<div class="col-md-3">
+												<div class="category-details">
+													<div class="category-label clr4">ICU Ventl</div>
+													<div id="icuVentCount" class="category-amount">0</div>
+												</div>
+											</div>
+
+
+
+										</div>
+
+									</div>
+								</div>
+								<div class="col-md-3 col-lg-3">
+									<div class="p-2 mb-1"><i class="fa fa-phone-square" aria-hidden="true"
+											style="color: #39b5b5; font-size:22px;"></i>
+										<a id="call">NAN</a>
+										<!--<span id="call" class="rserve_btn">NAN</span>-->
+
+									</div>
+
+									<div class="p-2 mb-1">
+									<!--	<a href="#" id="book" class="rserve_btn btn1" data-toggle="modal"
+										data-target="#largeModal">Book</a>-->
+										<a href="#" id="book" class="rserve_btn btn1" data-toggle="modal"
+										data-target="#largeModal">Book</a>
+
+									</div>
+
+
+
+
+								<!--</div>-->
+
+
+
+								</div>
+							</div>
+						</div>
+
+
+
+
+					</div><!-- #content -->
+						<!-- large modal -->
+
+				<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="myModalLabel">Emergency Response Team - Bangalore</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="container">
+									<form id="reservationSubmit1">
+										<div class="row">
+
+
+											<div class="col-md-4  bmd-form-group ">
+												<div class="form-group"> 
+												<input type="text" class="form-control" placeholder=" " required
+													 name="patientName" id="patientName">
+
+													<label class="form-control-placeholder" for="patientName">Patient Name *</label> 
+
+											</div></div>
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group"> 
+												<input type="number" class="form-control" placeholder=" " required 
+													name="age" id="age">
+													<label class="form-control-placeholder" for="age">Age *</label> 
+											</div>	</div>
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group">
+												<input type="address" class="form-control" placeholder=" " required
+													name="location" id="location">
+													<label class="form-control-placeholder" for="location">Area / Location *</label> 
+											</div>
+											</div>
+
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group">
+												<input type="text" class="form-control" 
+													name="symptoms"  placeholder=" " id="symptoms">
+													<label class="form-control-placeholder" for="symptoms">Symptoms</label> 
+											</div></div>
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group">
+												<input type="number" class="form-control" placeholder=" "
+													 name="sinceHowManyDays" id="sinceHowManyDays">
+													<label class="form-control-placeholder" for="sinceHowManyDays">Since how many days  </label> 
+											</div></div>
+
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group">
+												<input type="text" class="form-control" placeholder=" "
+													name="spo2Level" id="spo2Level">
+													<label class="form-control-placeholder" for="spo2Level">SPO2 Level</label> 
+											</div></div>
+
+
+
+											<div class="col-md-4  bmd-form-group">
+												
+												<select id="category" class="form-control" value="" required>
+													<option value="">Bed Category *</option>
+													<option value="general">General</option>
+													<option value="hdu">HDU</option>
+													<option value="icu">ICU</option>
+													<option value="icuVentilator">ICU Ventilator</option>
+													
+												</select>
+												 
+											</div>
+
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group">
+												<input type="text" class="form-control" placeholder=" "
+												 name="hospitalsVisited" id="hospitalsVisited">
+													<label class="form-control-placeholder" for="hospitalsVisited">List of Hospitals Visited</label> 
+											</div></div>
+
+											<div class="col-md-4  bmd-form-group">
+												<div class="form-group"> 
+												<input type="number" class="form-control" placeholder=" "
+													name="searchingHospitalSince"
+													id="searchingHospitalSince">
+													<label class="form-control-placeholder" for="searchingHospitalSince">Searching Hospital Bed Since ?</label> 
+											</div></div>
+
+											<div class="col-md-6 bmd-form-group">
+												<h6>Covid Test Done ? *</h6>
+
+												<div class="custom-control custom-radio custom-control-inline">
+													<input required type="radio" id="testedForCovid1" value="Yes"
+														name="testedForCovid" class="custom-control-input">
+													<label class="custom-control-label"
+														for="testedForCovid1">Yes</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input type="radio" id="testedForCovid2" value="No"
+														name="testedForCovid" class="custom-control-input">
+													<label class="custom-control-label"
+														for="testedForCovid2">No</label>
+												</div>
+
+
+											</div>
+
+											<div class="col-md-6 bmd-form-group">
+												<h6>Covid Result *</h6>
+
+												<div class="custom-control custom-radio custom-control-inline">
+													<input required type="radio" id="covidResult1" value="Positive"
+														name="covidResult" class="custom-control-input">
+													<label class="custom-control-label"
+														for="covidResult1">Positive</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input type="radio" id="covidResult2" value="Negative"
+														name="covidResult" class="custom-control-input">
+													<label class="custom-control-label"
+														for="covidResult2">Negative</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input type="radio" id="covidResult3" value="Awaiting"
+														name="covidResult" class="custom-control-input">
+													<label class="custom-control-label"
+														for="covidResult3">Awaiting</label>
+												</div>
+
+
+											</div>
+
+											<div class="col-md-6 bmd-form-group">
+												<h6>Is patient on Oxygen Cylinder ? *</h6>
+
+												<div class="custom-control custom-radio custom-control-inline">
+													<input required type="radio" id="onOxygenCylinder1" value="Yes"
+														name="onOxygenCylinder" class="custom-control-input">
+													<label class="custom-control-label"
+														for="onOxygenCylinder1">Yes</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input type="radio" id="onOxygenCylinder2" value="No"
+														name="onOxygenCylinder" class="custom-control-input">
+													<label class="custom-control-label"
+														for="onOxygenCylinder2">No</label>
+												</div>
+
+
+											</div>
+
+											<div class="col-md-6 bmd-form-group">
+												<h6>Prefer Hospital *</h6>
+
+												<div class="custom-control custom-radio custom-control-inline">
+													<input required type="radio" id="hospitalPreference1" value="Government"
+														name="hospitalPreference" class="custom-control-input">
+													<label class="custom-control-label"
+														for="hospitalPreference1">Government</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input type="radio" id="hospitalPreference2" value="Private"
+														name="hospitalPreference" class="custom-control-input">
+													<label class="custom-control-label"
+														for="hospitalPreference2">Private</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input type="radio" id="hospitalPreference3" value="Any"
+														name="hospitalPreference" class="custom-control-input">
+													<label class="custom-control-label"
+														for="hospitalPreference3">Any</label>
+												</div>
+
+
+											</div>
+
+
+
+											<div class="col-md-6  bmd-form-group">
+												<div class="form-group">
+												<input type="phone" required class="form-control" placeholder=" " pattern="[1-9]{1}[0-9]{9}"
+													name="attenderMobile" id="attenderMobile">
+													<label class="form-control-placeholder" for="attenderMobile">Attender Mobile No * </label> 
+											</div></div>
+											<div class="col-md-6  bmd-form-group">
+												<div class="form-group">
+												<input type="text" class="form-control" placeholder=" " required
+													name="relationship" id="relationship">
+													<label class="form-control-placeholder" for="relationship">Relation to the Patient *</label> 
+											</div></div>
+											<div class="col-md-6  bmd-form-group">
+												<div class="form-group">
+												<input type="text" class="form-control" placeholder=" "
+													name="srfid" id="srfid">
+													<label class="form-control-placeholder" for="srfid">SRF ID</label> 
+											</div></div>
+											<div class="col-md-6  bmd-form-group">
+												<div class="form-group">
+												<input type="text" class="form-control"  placeholder=" "
+													name="buNumber" id="buNumber">
+													<label class="form-control-placeholder" for="buNumber">BU Number</label> 
+											</div></div>
+
+
+											<div class="col-md-12">
+												<button type="submit"
+													class="rserve_btn mt-4 w-50 mx-auto">Submit</button>
+											</div>
+
+										</div>
+									</form>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				
